@@ -394,6 +394,7 @@
     transition: border-color 0.3s, background 0.3s;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
   .project-card::before {
     content: '';
@@ -486,6 +487,12 @@
   }
   .project-link:hover { background: var(--amber); color: #0a0a08; }
   .project-link svg { width: 14px; height: 14px; }
+  .project-link.ghost {
+    color: var(--text-muted);
+    border-color: var(--border);
+    background: transparent;
+  }
+  .project-link.ghost:hover { background: var(--bg3); color: var(--amber); border-color: var(--border-amber); }
   .project-highlights {
     margin-top: 1.25rem;
     padding-top: 1.25rem;
@@ -710,6 +717,10 @@
       <span class="skill-pill"><span class="skill-dot"></span>Session Management</span>
       <span class="skill-pill"><span class="skill-dot"></span>Vercel</span>
       <span class="skill-pill"><span class="skill-dot"></span>Git</span>
+      <span class="skill-pill"><span class="skill-dot"></span>Figma</span>
+      <span class="skill-pill"><span class="skill-dot"></span>UI/UX Design</span>
+      <span class="skill-pill"><span class="skill-dot"></span>Manual Testing</span>
+      <span class="skill-pill"><span class="skill-dot"></span>Jira</span>
     </div>
   </div>
 </section>
@@ -723,7 +734,7 @@
   <div class="projects-grid">
 
     <!-- Whimsy Wishes -->
-    <div class="project-card featured fade-up">
+    <div class="project-card featured fade-up" data-detail="details/whimsy-wishes.html">
       <div class="project-left">
         <div class="project-badge badge-live">Live</div>
         <div class="project-num">01 — E-Commerce</div>
@@ -746,15 +757,16 @@
         </div>
       </div>
       <div class="project-actions">
-        <a href="https://whimsywishes.in" target="_blank" class="project-link">
+        <a href="https://whimsywishes.in" target="_blank" class="project-link" data-card-ignore>
           Visit Site
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
+        <a href="details/whimsy-wishes.html" class="project-link ghost" data-card-ignore>View Case Study</a>
       </div>
     </div>
 
     <!-- Darken Shadows -->
-    <div class="project-card fade-up">
+    <div class="project-card fade-up" data-detail="details/darken-shadows.html">
       <div class="project-left">
         <div class="project-badge badge-local">Service Based</div>
         <div class="project-num">02 — Service Platform</div>
@@ -775,12 +787,12 @@
         </div>
       </div>
       <div class="project-actions">
-        <span class="project-link" style="opacity: 0.5; cursor: default; pointer-events: none;">Local Build</span>
+        <a href="details/darken-shadows.html" class="project-link ghost" data-card-ignore>View Case Study</a>
       </div>
     </div>
 
     <!-- S Collections -->
-    <div class="project-card fade-up">
+    <div class="project-card fade-up" data-detail="details/s-collections.html">
       <div class="project-left">
         <div class="project-badge badge-progress">In Progress · Collaboration</div>
         <div class="project-num">03 — E-Commerce</div>
@@ -800,12 +812,12 @@
         </div>
       </div>
       <div class="project-actions">
-        <span class="project-link" style="opacity: 0.5; cursor: default; pointer-events: none;">In Progress</span>
+        <a href="details/s-collections.html" class="project-link ghost" data-card-ignore>View Case Study</a>
       </div>
     </div>
 
     <!-- BlazePlus -->
-    <div class="project-card featured fade-up">
+    <div class="project-card featured fade-up" data-detail="details/blazeplus.html">
       <div class="project-left">
         <div class="project-badge badge-local">Local Build</div>
         <div class="project-num">04 — Internal Platform</div>
@@ -828,7 +840,7 @@
         </div>
       </div>
       <div class="project-actions">
-        <span class="project-link" style="opacity: 0.5; cursor: default; pointer-events: none;">Local Build</span>
+        <a href="details/blazeplus.html" class="project-link ghost" data-card-ignore>View Case Study</a>
       </div>
     </div>
 
@@ -887,6 +899,15 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Make whole project card clickable, without breaking inner links/buttons
+  document.querySelectorAll('.project-card[data-detail]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('[data-card-ignore]')) return;
+      const dest = card.getAttribute('data-detail');
+      if (dest) window.location.href = dest;
+    });
+  });
 </script>
 </body>
 </html>
