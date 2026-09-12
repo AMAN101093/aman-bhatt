@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aman Bhatt — Full Stack Developer</title>
+<title>Aman Bhatt — Full Stack Developer, UI/UX Designer & QA Tester</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -177,6 +177,23 @@
     margin-bottom: 1.5rem;
   }
   .hero-name span { color: var(--amber); }
+  .hero-roles {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .hero-roles .role-sep {
+    color: var(--amber);
+    opacity: 0.6;
+    font-weight: 400;
+  }
   .hero-contact-info {
     display: flex;
     gap: 1rem;
@@ -347,6 +364,15 @@
   }
   .section-inner { max-width: 1200px; margin: 0 auto; }
   .section-header { margin-bottom: 3.5rem; }
+  .skill-group { margin-bottom: 2rem; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
   .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -370,13 +396,19 @@
     color: var(--amber);
     background: var(--amber-glow2);
   }
+  .skill-pill.core {
+    background: var(--amber-glow2);
+    border-color: var(--border-amber);
+    color: var(--amber);
+    font-weight: 500;
+  }
   .skill-dot {
     width: 6px; height: 6px;
     background: var(--amber);
     border-radius: 50%;
     opacity: 0.5;
   }
-  .skill-pill:hover .skill-dot { opacity: 1; }
+  .skill-pill:hover .skill-dot, .skill-pill.core .skill-dot { opacity: 1; }
 
   /* PROJECTS */
   #projects { padding: 8rem 3rem; max-width: 1200px; margin: 0 auto; }
@@ -394,7 +426,6 @@
     transition: border-color 0.3s, background 0.3s;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
   }
   .project-card::before {
     content: '';
@@ -627,6 +658,9 @@
       <h1 class="hero-name">
         Aman<br><span>Bhatt.</span>
       </h1>
+      <div class="hero-roles">
+        <span>Full Stack Developer</span><span class="role-sep">·</span><span>UI/UX Designer</span><span class="role-sep">·</span><span>Manual Tester</span>
+      </div>
       <div class="hero-contact-info">
         <a href="mailto:amanbhattx3@gmail.com" class="hero-contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
@@ -641,7 +675,7 @@
           GitHub
         </a>
       </div>
-      <p class="hero-tagline">I build modern, responsive websites that help businesses create a strong online presence and connect better with their customers.</p>
+      <p class="hero-tagline">I design, build, and test web products end-to-end — from Figma wireframes to production-ready code to catching the bugs before your users do.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">View My Work</a>
         <a href="#contact" class="btn-ghost">Let's Talk →</a>
@@ -702,26 +736,41 @@
       <p class="about-label">// Tech Stack</p>
       <h2 class="about-heading" style="margin-bottom: 0;">What I work with</h2>
     </div>
-    <div class="skills-grid fade-up">
-      <span class="skill-pill"><span class="skill-dot"></span>HTML5</span>
-      <span class="skill-pill"><span class="skill-dot"></span>CSS3</span>
-      <span class="skill-pill"><span class="skill-dot"></span>JavaScript</span>
-      <span class="skill-pill"><span class="skill-dot"></span>PHP</span>
-      <span class="skill-pill"><span class="skill-dot"></span>MySQL</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Razorpay Integration</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Email / SMTP Systems</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Admin Panel Development</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Role-based Auth</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Responsive Design</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Database Design</span>
-      <span class="skill-pill"><span class="skill-dot"></span>REST APIs</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Session Management</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Vercel</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Git</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Figma</span>
-      <span class="skill-pill"><span class="skill-dot"></span>UI/UX Design</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Manual Testing</span>
-      <span class="skill-pill"><span class="skill-dot"></span>Jira</span>
+    <div class="fade-up">
+      <div class="skill-group">
+        <p class="skill-group-label">Core</p>
+        <div class="skills-grid">
+          <span class="skill-pill core"><span class="skill-dot"></span>Figma</span>
+          <span class="skill-pill core"><span class="skill-dot"></span>UI/UX Design</span>
+          <span class="skill-pill core"><span class="skill-dot"></span>Manual Testing</span>
+          <span class="skill-pill core"><span class="skill-dot"></span>MySQL</span>
+          <span class="skill-pill core"><span class="skill-dot"></span>Jira</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-label">Also Working With</p>
+        <div class="skills-grid">
+          <span class="skill-pill"><span class="skill-dot"></span>Razorpay Integration</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Email / SMTP Systems</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Admin Panel Development</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Role-based Auth</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Responsive Design</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Database Design</span>
+          <span class="skill-pill"><span class="skill-dot"></span>REST APIs</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Session Management</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Vercel</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Git</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-label">Languages</p>
+        <div class="skills-grid">
+          <span class="skill-pill"><span class="skill-dot"></span>PHP</span>
+          <span class="skill-pill"><span class="skill-dot"></span>JavaScript</span>
+          <span class="skill-pill"><span class="skill-dot"></span>HTML5</span>
+          <span class="skill-pill"><span class="skill-dot"></span>CSS3</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -735,7 +784,7 @@
   <div class="projects-grid">
 
     <!-- Whimsy Wishes -->
-    <div class="project-card featured fade-up" data-detail="details/whimsy-wishes.html">
+    <div class="project-card featured fade-up">
       <div class="project-left">
         <div class="project-badge badge-live">Live</div>
         <div class="project-num">01 — E-Commerce</div>
@@ -758,18 +807,18 @@
         </div>
       </div>
       <div class="project-actions">
-        <a href="https://whimsywishes.in" target="_blank" class="project-link" data-card-ignore>
+        <a href="https://whimsywishes.in" target="_blank" class="project-link">
           Visit Site
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
-        <a href="details/whimsy-wishes.html" class="project-link ghost" data-card-ignore>View Case Study</a>
+        <a href="details/whimsy-wishes.html" class="project-link ghost">View Case Study</a>
       </div>
     </div>
 
     <!-- Darken Shadows -->
-    <div class="project-card fade-up" data-detail="details/darken-shadows.html">
+    <div class="project-card fade-up">
       <div class="project-left">
-        <div class="project-badge badge-completed">Completed</div>
+        <div class="project-badge badge-live">Live</div>
         <div class="project-num">02 — Service Platform</div>
         <h3 class="project-title">Darken Shadows</h3>
         <p class="project-desc">A swimming class booking and management platform. Users can browse and enrol into programs, while admins manage coaches, members, and bookings. Features a multi-role system with separate access for admins, coaches, and members — each with their own dashboard.</p>
@@ -788,14 +837,18 @@
         </div>
       </div>
       <div class="project-actions">
-        <a href="details/darken-shadows.html" class="project-link ghost" data-card-ignore>View Case Study</a>
+        <a href="https://dark-teal-eight.vercel.app/" target="_blank" class="project-link">
+          Visit Site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="details/darken-shadows.html" class="project-link ghost">View Case Study</a>
       </div>
     </div>
 
     <!-- S Collections -->
-    <div class="project-card fade-up" data-detail="details/s-collections.html">
+    <div class="project-card fade-up">
       <div class="project-left">
-        <div class="project-badge badge-completed">Completed · Collaboration</div>
+        <div class="project-badge badge-live">Live · Collaboration</div>
         <div class="project-num">03 — E-Commerce</div>
         <h3 class="project-title">S Collections</h3>
         <p class="project-desc">A completed e-commerce website built for a local women's clothing shop. This was a collaborative project — I handled the logic, database architecture, and backend connectivity, while my partner managed the content, product imagery, and page design.</p>
@@ -809,18 +862,22 @@
         <div class="project-highlights">
           <div class="highlight-item"><strong>My Role</strong>Logic & database</div>
           <div class="highlight-item"><strong>Partner Role</strong>Design & content</div>
-          <div class="highlight-item"><strong>Status</strong>Completed</div>
+          <div class="highlight-item"><strong>Status</strong>Live</div>
         </div>
       </div>
       <div class="project-actions">
-        <a href="details/s-collections.html" class="project-link ghost" data-card-ignore>View Case Study</a>
+        <a href="https://s-collections.vercel.app/" target="_blank" class="project-link">
+          Visit Site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="details/s-collections.html" class="project-link ghost">View Case Study</a>
       </div>
     </div>
 
     <!-- BlazePlus -->
-    <div class="project-card featured fade-up" data-detail="details/blazeplus.html">
+    <div class="project-card featured fade-up">
       <div class="project-left">
-        <div class="project-badge badge-completed">Completed</div>
+        <div class="project-badge badge-live">Live</div>
         <div class="project-num">04 — Internal Platform</div>
         <h3 class="project-title">BlazePlus</h3>
         <p class="project-desc">A full-stack internal employee directory and communication platform, built from the ground up in raw PHP and MySQL. Features a multi-stage admin-gated signup pipeline, role-tiered visibility rules, department transfer requests, a contact-request system for cross-role privacy, and live-updating department chat rooms with moderation — all built solo, documented daily on LinkedIn during development.</p>
@@ -841,7 +898,11 @@
         </div>
       </div>
       <div class="project-actions">
-        <a href="details/blazeplus.html" class="project-link ghost" data-card-ignore>View Case Study</a>
+        <a href="https://blaze-plus.vercel.app/" target="_blank" class="project-link">
+          Visit Site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="details/blazeplus.html" class="project-link ghost">View Case Study</a>
       </div>
     </div>
 
@@ -900,15 +961,6 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Make whole project card clickable, without breaking inner links/buttons
-  document.querySelectorAll('.project-card[data-detail]').forEach(card => {
-    card.addEventListener('click', (e) => {
-      if (e.target.closest('[data-card-ignore]')) return;
-      const dest = card.getAttribute('data-detail');
-      if (dest) window.location.href = dest;
-    });
-  });
 </script>
 </body>
 </html>
