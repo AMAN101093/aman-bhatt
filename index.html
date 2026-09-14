@@ -621,6 +621,73 @@
   .fade-up:nth-child(3) { transition-delay: 0.2s; }
   .fade-up:nth-child(4) { transition-delay: 0.3s; }
 
+  /* NOTICE MODAL */
+  .notice-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,8,0.75);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 1.5rem;
+  }
+  .notice-overlay.visible { opacity: 1; pointer-events: auto; }
+  .notice-box {
+    background: var(--bg2);
+    border: 1px solid var(--border-amber);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    max-width: 420px;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .notice-overlay.visible .notice-box { transform: translateY(0); }
+  .notice-icon {
+    width: 48px; height: 48px;
+    background: var(--amber-glow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-size: 1.4rem;
+  }
+  .notice-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+  .notice-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .notice-text strong { color: var(--amber); font-weight: 500; }
+  .notice-btn {
+    background: var(--amber);
+    color: #0a0a08;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.7rem 2.5rem;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .notice-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(239,159,39,0.3); }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { gap: 1.25rem; }
@@ -635,6 +702,15 @@
 </style>
 </head>
 <body>
+
+<div class="notice-overlay" id="noticeOverlay">
+  <div class="notice-box">
+    <div class="notice-icon">📚</div>
+    <h3 class="notice-title">A Quick Note</h3>
+    <p class="notice-text">I'm currently preparing for an exam happening in a few days, so I haven't been able to upload project screenshots yet. In the meantime, feel free to click <strong>Visit Site</strong> on any project below to explore it live.</p>
+    <button class="notice-btn" id="noticeOkBtn">Okay</button>
+  </div>
+</div>
 
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
@@ -940,6 +1016,19 @@
 </footer>
 
 <script>
+  // First-visit exam notice
+  (function() {
+    const overlay = document.getElementById('noticeOverlay');
+    const okBtn = document.getElementById('noticeOkBtn');
+    if (!sessionStorage.getItem('noticeSeen')) {
+      setTimeout(() => overlay.classList.add('visible'), 400);
+    }
+    okBtn.addEventListener('click', () => {
+      overlay.classList.remove('visible');
+      sessionStorage.setItem('noticeSeen', 'true');
+    });
+  })();
+
   // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
