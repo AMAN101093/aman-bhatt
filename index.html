@@ -23,6 +23,8 @@
     --text-dim: #5a5855;
     --border: rgba(255,255,255,0.07);
     --border-amber: rgba(239,159,39,0.25);
+    --red: #F09595;
+    --red-strong: #E24B4A;
   }
 
   html { scroll-behavior: smooth; }
@@ -45,7 +47,7 @@
     position: fixed;
     top: 0; left: 0;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 11000;
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s, background 0.2s;
   }
@@ -56,7 +58,7 @@
     position: fixed;
     top: 0; left: 0;
     pointer-events: none;
-    z-index: 9998;
+    z-index: 10999;
     transform: translate(-50%, -50%);
     transition: transform 0.12s ease, width 0.2s, height 0.2s;
   }
@@ -412,6 +414,7 @@
 
   /* PROJECTS */
   #projects { padding: 8rem 3rem; max-width: 1200px; margin: 0 auto; }
+  #redesign { padding: 2rem 3rem 8rem; max-width: 1200px; margin: 0 auto; }
   .projects-grid { display: flex; flex-direction: column; gap: 1.5rem; }
 
   .project-card {
@@ -459,6 +462,10 @@
   .badge-collab { background: rgba(127,119,221,0.12); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.25); }
   .badge-progress { background: rgba(127,119,221,0.12); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.25); }
   .badge-completed { background: rgba(99,153,34,0.12); color: #97C459; border: 1px solid rgba(99,153,34,0.25); }
+  .badge-expired { background: rgba(226,75,74,0.12); color: var(--red); border: 1px solid rgba(226,75,74,0.35); }
+  .badge-expired::before { content: ''; width: 5px; height: 5px; background: var(--red-strong); border-radius: 50%; }
+  .badge-assignment { background: rgba(127,119,221,0.12); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.25); }
+  .badge-assignment::before { content: ''; width: 5px; height: 5px; background: #AFA9EC; border-radius: 50%; }
 
   .project-num {
     font-family: 'Syne', sans-serif;
@@ -535,6 +542,45 @@
   }
   .highlight-item { font-size: 0.8rem; color: var(--text-dim); }
   .highlight-item strong { color: var(--amber); font-weight: 500; display: block; font-size: 0.9rem; }
+  .highlight-item strong.red { color: var(--red); }
+
+  /* NOTICE MODAL */
+  .notice-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(10,10,8,0.8);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .notice-overlay.open { display: flex; }
+  .notice-box {
+    background: var(--bg3);
+    border: 1px solid var(--border-amber);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    max-width: 460px;
+    text-align: center;
+  }
+  .notice-box h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    color: var(--amber);
+    margin-bottom: 0.75rem;
+  }
+  .notice-box p { color: var(--text-muted); font-weight: 300; margin-bottom: 1.5rem; }
+  .notice-box button {
+    background: var(--amber);
+    color: #0a0a08;
+    border: 0;
+    cursor: pointer;
+    font: 500 0.9rem 'DM Sans', sans-serif;
+    padding: 0.7rem 2rem;
+    border-radius: 3rem;
+  }
 
   /* CONTACT */
   #contact {
@@ -624,7 +670,7 @@
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { gap: 1.25rem; }
-    #hero, #about, #skills, #projects, #contact, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    #hero, #about, #skills, #projects, #redesign, #contact, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
     #about { grid-template-columns: 1fr; gap: 3rem; }
     .project-card { grid-template-columns: 1fr; }
     .project-actions { align-items: flex-start; flex-direction: row; }
@@ -644,10 +690,20 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#redesign">Redesign</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+
+<!-- WHIMSY WISHES NOTICE -->
+<div class="notice-overlay" id="notice" role="dialog" aria-modal="true" aria-labelledby="noticeTitle" onclick="if(event.target===this)closeNotice()">
+  <div class="notice-box">
+    <h4 id="noticeTitle">Coming back soon</h4>
+    <p>The UI for Whimsy Wishes will be live in a few days, since it requires a rebuild.</p>
+    <button type="button" onclick="closeNotice()">Got it</button>
+  </div>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -693,7 +749,7 @@
   <div class="about-left fade-up">
     <p class="about-label">// About Me</p>
     <h2 class="about-heading">Turning ideas into<br>web experiences</h2>
-    <p class="about-text">I'm a <strong>Full Stack Developer</strong> from Dehradun, Uttarakhand, with over a year of hands-on web development experience. I started coding during my college years and built my first live production website — <strong>Whimsy Wishes</strong> — entirely on my own, spending 3–4 months crafting every feature from scratch.</p>
+    <p class="about-text">I'm a <strong>Full Stack Developer</strong> from Dehradun, Uttarakhand, with over a year of hands-on web development experience. I started coding during my college years and built my first production e-commerce website — <strong>Whimsy Wishes</strong> — entirely on my own, spending 3–4 months crafting every feature from scratch.</p>
     <p class="about-text">That first project taught me more than any classroom — from payment gateway integrations to email systems, admin panels, and real user sessions. I've been building ever since.</p>
     <p class="about-text">Currently focused on <strong>freelance work</strong>, helping local businesses and startups get online with websites that actually work for them.</p>
   </div>
@@ -708,8 +764,8 @@
     <div class="stat-card">
       <div class="stat-icon">🌐</div>
       <div>
-        <div class="stat-num">4</div>
-        <div class="stat-label">Projects built — including 1 live production site</div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">Projects built — including a production e-commerce site</div>
       </div>
     </div>
     <div class="stat-card">
@@ -786,10 +842,10 @@
     <!-- Whimsy Wishes -->
     <div class="project-card featured fade-up">
       <div class="project-left">
-        <div class="project-badge badge-live">Live</div>
+        <div class="project-badge badge-expired">Domain expires as of 12 Nov 2026</div>
         <div class="project-num">01 — E-Commerce</div>
         <h3 class="project-title">Whimsy Wishes</h3>
-        <p class="project-desc">A full-featured e-commerce platform for handmade items. Built entirely solo over 3–4 months, this was my first live production website — and one of the most ambitious learning experiences I've had. Every feature was researched, designed, and implemented from scratch.</p>
+        <p class="project-desc">A full-featured e-commerce platform for handmade items. Built entirely solo over 3–4 months, this was my first production website — and one of the most ambitious learning experiences I've had. Every feature was researched, designed, and implemented from scratch.</p>
         <div class="project-tags">
           <span class="project-tag">PHP</span>
           <span class="project-tag">MySQL</span>
@@ -803,11 +859,11 @@
           <div class="highlight-item"><strong>Razorpay</strong>Payment gateway</div>
           <div class="highlight-item"><strong>Mailing System</strong>Order notifications</div>
           <div class="highlight-item"><strong>Admin Panel</strong>Full inventory control</div>
-          <div class="highlight-item"><strong>Live</strong>whimsywishes.in</div>
+          <div class="highlight-item"><strong class="red">Domain Expired</strong>UI rebuild in progress</div>
         </div>
       </div>
       <div class="project-actions">
-        <a href="https://whimsywishes.in" target="_blank" class="project-link">
+        <a href="#" onclick="openNotice(event)" class="project-link">
           Visit Site
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
@@ -909,6 +965,43 @@
   </div>
 </section>
 
+<!-- REDESIGNED WEBSITE -->
+<section id="redesign">
+  <div class="section-header fade-up">
+    <p class="about-label">// Redesigned Website</p>
+    <h2 class="about-heading">Redesign work</h2>
+  </div>
+  <div class="projects-grid">
+
+    <!-- ScanDrive -->
+    <div class="project-card fade-up">
+      <div class="project-left">
+        <div class="project-badge badge-assignment">Assignment</div>
+        <div class="project-num">Redesign</div>
+        <h3 class="project-title">ScanDrive</h3>
+        <p class="project-desc">A redesigned website created as an assignment. The goal was to rethink the UI and layout of the original and present it as a clean, working front end.</p>
+        <div class="project-tags">
+          <span class="project-tag">Redesign</span>
+          <span class="project-tag">UI/UX</span>
+          <span class="project-tag">Assignment</span>
+        </div>
+        <div class="project-highlights">
+          <div class="highlight-item"><strong>Type</strong>Assignment</div>
+          <div class="highlight-item"><strong>Focus</strong>UI redesign</div>
+          <div class="highlight-item"><strong>Hosting</strong>Vercel</div>
+        </div>
+      </div>
+      <div class="project-actions">
+        <a href="https://scandrive-omega.vercel.app/" target="_blank" class="project-link">
+          Visit Site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-glow"></div>
@@ -932,7 +1025,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-text">© 2025 Aman Bhatt. All rights reserved.</span>
+  <span class="footer-text">© 2026 Aman Bhatt. All rights reserved.</span>
   <div class="footer-loc">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
     Dehradun, Uttarakhand
@@ -961,6 +1054,16 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Whimsy Wishes "coming back soon" notice
+  function openNotice(e) {
+    e.preventDefault();
+    document.getElementById('notice').classList.add('open');
+  }
+  function closeNotice() {
+    document.getElementById('notice').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNotice(); });
 </script>
 </body>
 </html>
