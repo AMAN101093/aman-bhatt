@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aman Bhatt — Full Stack Developer, UI/UX Designer & QA Tester</title>
+<title>Aman Bhatt — Product Developer & System Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -109,7 +109,6 @@
   }
   .nav-links a:hover { color: var(--amber); }
 
-  /* SECTIONS */
   section { position: relative; }
 
   /* HERO */
@@ -191,11 +190,7 @@
     color: var(--text-muted);
     margin-bottom: 1.5rem;
   }
-  .hero-roles .role-sep {
-    color: var(--amber);
-    opacity: 0.6;
-    font-weight: 400;
-  }
+  .hero-roles .role-sep { color: var(--amber); opacity: 0.6; font-weight: 400; }
   .hero-contact-info {
     display: flex;
     gap: 1rem;
@@ -215,11 +210,7 @@
     transition: color 0.2s, border-color 0.2s, background 0.2s;
     background: var(--bg2);
   }
-  .hero-contact-item:hover {
-    color: var(--amber);
-    border-color: var(--border-amber);
-    background: var(--amber-glow2);
-  }
+  .hero-contact-item:hover { color: var(--amber); border-color: var(--border-amber); background: var(--amber-glow2); }
   .hero-contact-item svg { flex-shrink: 0; }
   .hero-tagline {
     font-size: clamp(1rem, 2vw, 1.2rem);
@@ -229,12 +220,7 @@
     line-height: 1.6;
     margin-bottom: 3rem;
   }
-  .hero-cta {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
   .btn-primary {
     background: var(--amber);
     color: #0a0a08;
@@ -275,13 +261,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
-  .scroll-line {
-    width: 40px;
-    height: 1px;
-    background: var(--text-dim);
-    position: relative;
-    overflow: hidden;
-  }
+  .scroll-line { width: 40px; height: 1px; background: var(--text-dim); position: relative; overflow: hidden; }
   .scroll-line::after {
     content: '';
     position: absolute;
@@ -319,12 +299,7 @@
     color: var(--text);
     margin-bottom: 1.5rem;
   }
-  .about-text {
-    color: var(--text-muted);
-    font-weight: 300;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-  }
+  .about-text { color: var(--text-muted); font-weight: 300; line-height: 1.8; margin-bottom: 1rem; }
   .about-text strong { color: var(--text); font-weight: 500; }
   .about-right { display: flex; flex-direction: column; gap: 1rem; }
   .stat-card {
@@ -348,13 +323,7 @@
     flex-shrink: 0;
     font-size: 1.25rem;
   }
-  .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--amber);
-    line-height: 1;
-  }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--amber); line-height: 1; }
   .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem; }
 
   /* SKILLS */
@@ -375,11 +344,7 @@
     color: var(--text-dim);
     margin-bottom: 1rem;
   }
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   .skill-pill {
     display: inline-flex;
     align-items: center;
@@ -393,23 +358,9 @@
     transition: all 0.2s;
     cursor: default;
   }
-  .skill-pill:hover {
-    border-color: var(--border-amber);
-    color: var(--amber);
-    background: var(--amber-glow2);
-  }
-  .skill-pill.core {
-    background: var(--amber-glow2);
-    border-color: var(--border-amber);
-    color: var(--amber);
-    font-weight: 500;
-  }
-  .skill-dot {
-    width: 6px; height: 6px;
-    background: var(--amber);
-    border-radius: 50%;
-    opacity: 0.5;
-  }
+  .skill-pill:hover { border-color: var(--border-amber); color: var(--amber); background: var(--amber-glow2); }
+  .skill-pill.core { background: var(--amber-glow2); border-color: var(--border-amber); color: var(--amber); font-weight: 500; }
+  .skill-dot { width: 6px; height: 6px; background: var(--amber); border-radius: 50%; opacity: 0.5; }
   .skill-pill:hover .skill-dot, .skill-pill.core .skill-dot { opacity: 1; }
 
   /* PROJECTS */
@@ -462,18 +413,10 @@
   .badge-collab { background: rgba(127,119,221,0.12); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.25); }
   .badge-progress { background: rgba(127,119,221,0.12); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.25); }
   .badge-completed { background: rgba(99,153,34,0.12); color: #97C459; border: 1px solid rgba(99,153,34,0.25); }
-  .badge-expired { background: rgba(226,75,74,0.12); color: var(--red); border: 1px solid rgba(226,75,74,0.35); }
-  .badge-expired::before { content: ''; width: 5px; height: 5px; background: var(--red-strong); border-radius: 50%; }
   .badge-assignment { background: rgba(127,119,221,0.12); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.25); }
   .badge-assignment::before { content: ''; width: 5px; height: 5px; background: #AFA9EC; border-radius: 50%; }
 
-  .project-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.7rem;
-    color: var(--text-dim);
-    letter-spacing: 0.1em;
-    margin-bottom: 0.75rem;
-  }
+  .project-num { font-family: 'Syne', sans-serif; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 0.75rem; }
   .project-title {
     font-family: 'Syne', sans-serif;
     font-size: 1.6rem;
@@ -483,14 +426,7 @@
     margin-bottom: 0.75rem;
     line-height: 1.2;
   }
-  .project-desc {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    font-weight: 300;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    max-width: 600px;
-  }
+  .project-desc { color: var(--text-muted); font-size: 0.95rem; font-weight: 300; line-height: 1.7; margin-bottom: 1.5rem; max-width: 600px; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .project-tag {
     font-size: 0.75rem;
@@ -502,19 +438,14 @@
     font-family: 'DM Sans', sans-serif;
     letter-spacing: 0.02em;
   }
-  .project-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.75rem;
-    flex-shrink: 0;
-  }
+  .project-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.75rem; flex-shrink: 0; }
   .project-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     color: var(--amber);
     text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.875rem;
     font-weight: 500;
     padding: 0.6rem 1.25rem;
@@ -523,14 +454,11 @@
     transition: all 0.2s;
     background: var(--amber-glow2);
     white-space: nowrap;
+    cursor: none;
   }
   .project-link:hover { background: var(--amber); color: #0a0a08; }
   .project-link svg { width: 14px; height: 14px; }
-  .project-link.ghost {
-    color: var(--text-muted);
-    border-color: var(--border);
-    background: transparent;
-  }
+  .project-link.ghost { color: var(--text-muted); border-color: var(--border); background: transparent; }
   .project-link.ghost:hover { background: var(--bg3); color: var(--amber); border-color: var(--border-amber); }
   .project-highlights {
     margin-top: 1.25rem;
@@ -542,53 +470,57 @@
   }
   .highlight-item { font-size: 0.8rem; color: var(--text-dim); }
   .highlight-item strong { color: var(--amber); font-weight: 500; display: block; font-size: 0.9rem; }
-  .highlight-item strong.red { color: var(--red); }
 
-  /* NOTICE MODAL */
-  .notice-overlay {
+  /* ARCHITECTURE MODAL */
+  .arch-overlay {
     position: fixed;
     inset: 0;
     z-index: 10000;
-    background: rgba(10,10,8,0.8);
+    background: rgba(10,10,8,0.85);
     backdrop-filter: blur(8px);
     display: none;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
+    overflow-y: auto;
   }
-  .notice-overlay.open { display: flex; }
-  .notice-box {
+  .arch-overlay.open { display: flex; }
+  .arch-box {
     background: var(--bg3);
     border: 1px solid var(--border-amber);
     border-radius: 1.25rem;
     padding: 2.5rem;
-    max-width: 460px;
-    text-align: center;
+    width: 100%;
+    max-width: 820px;
+    max-height: 100%;
+    overflow-y: auto;
   }
-  .notice-box h4 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.3rem;
-    color: var(--amber);
-    margin-bottom: 0.75rem;
-  }
-  .notice-box p { color: var(--text-muted); font-weight: 300; margin-bottom: 1.5rem; }
-  .notice-box button {
+  .arch-box h4 { font-family: 'Syne', sans-serif; font-size: 1.4rem; color: var(--amber); margin-bottom: 0.5rem; }
+  .arch-box > .arch-view > p { color: var(--text-muted); font-weight: 300; font-size: 0.92rem; margin-bottom: 1.5rem; }
+  .arch-view { display: none; }
+  .arch-view.show { display: block; }
+  .arch-box svg { width: 100%; height: auto; display: block; }
+  .arch-box svg text { font-family: 'DM Sans', sans-serif; fill: var(--text); font-size: 13px; }
+  .arch-box svg .sub { fill: var(--text-muted); font-size: 11px; }
+  .arch-box svg .lane { fill: var(--amber); font-size: 11px; letter-spacing: 0.08em; }
+  .arch-box svg .node { fill: var(--bg2); stroke: var(--border-amber); stroke-width: 1; }
+  .arch-box svg .node.key { fill: var(--amber-glow); stroke: var(--amber); }
+  .arch-box svg .band { fill: none; stroke: var(--text-dim); stroke-dasharray: 5 4; }
+  .arch-box svg .edge { stroke: var(--amber-dim); stroke-width: 1.5; fill: none; }
+  .arch-box svg .arrowhead { fill: var(--amber-dim); }
+  .arch-close {
+    margin-top: 1.5rem;
     background: var(--amber);
     color: #0a0a08;
     border: 0;
-    cursor: pointer;
+    cursor: none;
     font: 500 0.9rem 'DM Sans', sans-serif;
     padding: 0.7rem 2rem;
     border-radius: 3rem;
   }
 
   /* CONTACT */
-  #contact {
-    padding: 8rem 3rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+  #contact { padding: 8rem 3rem; text-align: center; position: relative; overflow: hidden; }
   .contact-glow {
     position: absolute;
     top: 50%; left: 50%;
@@ -608,13 +540,7 @@
     margin-bottom: 1rem;
   }
   .contact-heading span { color: var(--amber); }
-  .contact-sub {
-    color: var(--text-muted);
-    font-size: 1rem;
-    font-weight: 300;
-    margin-bottom: 3rem;
-    line-height: 1.7;
-  }
+  .contact-sub { color: var(--text-muted); font-size: 1rem; font-weight: 300; margin-bottom: 3rem; line-height: 1.7; }
   .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   .contact-link {
     display: inline-flex;
@@ -627,15 +553,9 @@
     font-weight: 500;
     transition: all 0.2s;
   }
-  .contact-link.primary {
-    background: var(--amber);
-    color: #0a0a08;
-  }
+  .contact-link.primary { background: var(--amber); color: #0a0a08; }
   .contact-link.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(239,159,39,0.3); }
-  .contact-link.secondary {
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-  }
+  .contact-link.secondary { border: 1px solid var(--border); color: var(--text-muted); }
   .contact-link.secondary:hover { border-color: var(--border-amber); color: var(--amber); }
 
   /* FOOTER */
@@ -647,21 +567,11 @@
     align-items: center;
   }
   .footer-text { font-size: 0.8rem; color: var(--text-dim); }
-  .footer-loc {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    color: var(--text-dim);
-  }
+  .footer-loc { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-dim); }
   .footer-loc svg { width: 14px; height: 14px; }
 
   /* ANIMATIONS */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
   .fade-up:nth-child(2) { transition-delay: 0.1s; }
   .fade-up:nth-child(3) { transition-delay: 0.2s; }
@@ -673,10 +583,11 @@
     #hero, #about, #skills, #projects, #redesign, #contact, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
     #about { grid-template-columns: 1fr; gap: 3rem; }
     .project-card { grid-template-columns: 1fr; }
-    .project-actions { align-items: flex-start; flex-direction: row; }
-    body { cursor: auto; }
+    .project-actions { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+    body, .project-link, .arch-close { cursor: auto; }
     .cursor, .cursor-ring { display: none; }
     .hero-inner { padding-top: 7rem; padding-bottom: 3rem; }
+    .arch-box { padding: 1.5rem; }
   }
 </style>
 </head>
@@ -696,12 +607,117 @@
   </ul>
 </nav>
 
-<!-- WHIMSY WISHES NOTICE -->
-<div class="notice-overlay" id="notice" role="dialog" aria-modal="true" aria-labelledby="noticeTitle" onclick="if(event.target===this)closeNotice()">
-  <div class="notice-box">
-    <h4 id="noticeTitle">Coming back soon</h4>
-    <p>The UI for Whimsy Wishes will be live in a few days, since it requires a rebuild.</p>
-    <button type="button" onclick="closeNotice()">Got it</button>
+<!-- SYSTEM ARCHITECTURE MODAL -->
+<div class="arch-overlay" id="arch" role="dialog" aria-modal="true" aria-label="System architecture" onclick="if(event.target===this)closeArch()">
+  <div class="arch-box">
+
+    <!-- Blaze AI -->
+    <div class="arch-view" id="arch-blaze-ai">
+      <h4>Blaze AI — System Architecture</h4>
+      <p>How an objective moves from the user, through the Supervisor and specialized agents, past a human approval gate, to the final output.</p>
+      <svg viewBox="0 0 720 370" role="img" aria-label="Blaze AI architecture: user objective to Supervisor to task dependency graph to specialized agents to human approval gate to output, with a memory and checkpoint layer underneath">
+        <defs>
+          <marker id="ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker>
+        </defs>
+        <text class="lane" x="20" y="22">INPUT &amp; PLANNING</text>
+        <rect class="node" x="20" y="34" width="150" height="56" rx="10"/>
+        <text x="95" y="58" text-anchor="middle">User objective</text>
+        <text class="sub" x="95" y="76" text-anchor="middle">Goal in plain language</text>
+
+        <rect class="node key" x="270" y="34" width="170" height="56" rx="10"/>
+        <text x="355" y="58" text-anchor="middle">Supervisor (S)</text>
+        <text class="sub" x="355" y="76" text-anchor="middle">Decomposes the objective</text>
+
+        <rect class="node" x="540" y="34" width="160" height="56" rx="10"/>
+        <text x="620" y="58" text-anchor="middle">Task dependency graph</text>
+        <text class="sub" x="620" y="76" text-anchor="middle">Live DAG scheduling</text>
+
+        <path class="edge" d="M170 62H268" marker-end="url(#ah1)"/>
+        <path class="edge" d="M440 62H538" marker-end="url(#ah1)"/>
+
+        <text class="lane" x="20" y="146">EXECUTION &amp; CONTROL</text>
+        <rect class="node" x="20" y="158" width="150" height="60" rx="10"/>
+        <text x="95" y="184" text-anchor="middle">Final output</text>
+        <text class="sub" x="95" y="202" text-anchor="middle">Verified result</text>
+
+        <rect class="node key" x="270" y="158" width="170" height="60" rx="10"/>
+        <text x="355" y="184" text-anchor="middle">Human approval gate</text>
+        <text class="sub" x="355" y="202" text-anchor="middle">Human-in-the-loop (HITL)</text>
+
+        <rect class="node" x="520" y="158" width="180" height="60" rx="10"/>
+        <text x="610" y="184" text-anchor="middle">Specialized agents</text>
+        <text class="sub" x="610" y="202" text-anchor="middle">Research · Verification</text>
+
+        <path class="edge" d="M620 90V156" marker-end="url(#ah1)"/>
+        <path class="edge" d="M520 188H442" marker-end="url(#ah1)"/>
+        <path class="edge" d="M270 188H172" marker-end="url(#ah1)"/>
+
+        <rect class="band" x="20" y="270" width="680" height="82" rx="12"/>
+        <text class="lane" x="36" y="290">SUPPORTING LAYER</text>
+        <rect class="node" x="40" y="298" width="300" height="42" rx="8"/>
+        <text x="190" y="324" text-anchor="middle">Selective memory retrieval</text>
+        <rect class="node" x="380" y="298" width="300" height="42" rx="8"/>
+        <text x="530" y="324" text-anchor="middle">Checkpoint-based fault recovery</text>
+      </svg>
+      <button type="button" class="arch-close" onclick="closeArch()">Close</button>
+    </div>
+
+    <!-- BlazePlus -->
+    <div class="arch-view" id="arch-blazeplus">
+      <h4>BlazePlus — System Architecture</h4>
+      <p>How a request moves from the browser through PHP session and role checks into MySQL, plus the admin-gated signup pipeline and the features built on top.</p>
+      <svg viewBox="0 0 720 370" role="img" aria-label="BlazePlus architecture: browser to PHP backend to MySQL, a four-step signup pipeline, and three role-based features">
+        <defs>
+          <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker>
+        </defs>
+        <text class="lane" x="20" y="22">REQUEST FLOW</text>
+        <rect class="node" x="20" y="34" width="170" height="56" rx="10"/>
+        <text x="105" y="58" text-anchor="middle">Browser</text>
+        <text class="sub" x="105" y="76" text-anchor="middle">Vanilla JS + AJAX</text>
+
+        <rect class="node key" x="275" y="34" width="170" height="56" rx="10"/>
+        <text x="360" y="58" text-anchor="middle">PHP backend</text>
+        <text class="sub" x="360" y="76" text-anchor="middle">Session + role checks</text>
+
+        <rect class="node" x="530" y="34" width="170" height="56" rx="10"/>
+        <text x="615" y="58" text-anchor="middle">MySQL</text>
+        <text class="sub" x="615" y="76" text-anchor="middle">Users, requests, messages</text>
+
+        <path class="edge" d="M190 62H273" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
+        <path class="edge" d="M445 62H528" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
+
+        <text class="lane" x="20" y="136">SIGNUP PIPELINE</text>
+        <rect class="node" x="20" y="148" width="140" height="52" rx="10"/>
+        <text x="90" y="170" text-anchor="middle">Sign up</text>
+        <text class="sub" x="90" y="187" text-anchor="middle">Form submitted</text>
+        <rect class="node" x="200" y="148" width="140" height="52" rx="10"/>
+        <text x="270" y="170" text-anchor="middle">Verify</text>
+        <text class="sub" x="270" y="187" text-anchor="middle">Account check</text>
+        <rect class="node key" x="380" y="148" width="140" height="52" rx="10"/>
+        <text x="450" y="170" text-anchor="middle">Admin review</text>
+        <text class="sub" x="450" y="187" text-anchor="middle">3 review queues</text>
+        <rect class="node" x="560" y="148" width="140" height="52" rx="10"/>
+        <text x="630" y="170" text-anchor="middle">Active member</text>
+        <text class="sub" x="630" y="187" text-anchor="middle">Role assigned</text>
+        <path class="edge" d="M160 174H198" marker-end="url(#ah2)"/>
+        <path class="edge" d="M340 174H378" marker-end="url(#ah2)"/>
+        <path class="edge" d="M520 174H558" marker-end="url(#ah2)"/>
+
+        <rect class="band" x="20" y="238" width="680" height="116" rx="12"/>
+        <text class="lane" x="36" y="258">FEATURES ON TOP</text>
+        <rect class="node" x="40" y="270" width="200" height="66" rx="8"/>
+        <text x="140" y="296" text-anchor="middle">Role-tiered visibility</text>
+        <text class="sub" x="140" y="314" text-anchor="middle">Who sees which profile</text>
+        <rect class="node" x="260" y="270" width="200" height="66" rx="8"/>
+        <text x="360" y="296" text-anchor="middle">Contact + transfer requests</text>
+        <text class="sub" x="360" y="314" text-anchor="middle">Approval-based privacy</text>
+        <rect class="node" x="480" y="270" width="200" height="66" rx="8"/>
+        <text x="580" y="296" text-anchor="middle">Department chat rooms</text>
+        <text class="sub" x="580" y="314" text-anchor="middle">AJAX polling + moderation</text>
+      </svg>
+      <button type="button" class="arch-close" onclick="closeArch()">Close</button>
+    </div>
+
   </div>
 </div>
 
@@ -710,12 +726,12 @@
   <div class="hero-bg-text">AMAN</div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-tag">Available for freelance work</div>
+      <div class="hero-tag">Open to full-time roles</div>
       <h1 class="hero-name">
         Aman<br><span>Bhatt.</span>
       </h1>
       <div class="hero-roles">
-        <span>Full Stack Developer</span><span class="role-sep">·</span><span>UI/UX Designer</span><span class="role-sep">·</span><span>Manual Tester</span>
+        <span>Product Developer</span><span class="role-sep">·</span><span>System Designer</span>
       </div>
       <div class="hero-contact-info">
         <a href="mailto:amanbhattx3@gmail.com" class="hero-contact-item">
@@ -731,7 +747,7 @@
           GitHub
         </a>
       </div>
-      <p class="hero-tagline">I design, build, and test web products end-to-end — from Figma wireframes to production-ready code to catching the bugs before your users do.</p>
+      <p class="hero-tagline">I architect, design, and ship end-to-end software products and AI systems, from system blueprints and database schemas to clean, functional interfaces.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">View My Work</a>
         <a href="#contact" class="btn-ghost">Let's Talk →</a>
@@ -748,10 +764,10 @@
 <section id="about">
   <div class="about-left fade-up">
     <p class="about-label">// About Me</p>
-    <h2 class="about-heading">Turning ideas into<br>web experiences</h2>
-    <p class="about-text">I'm a <strong>Full Stack Developer</strong> from Dehradun, Uttarakhand, with over a year of hands-on web development experience. I started coding during my college years and built my first production e-commerce website — <strong>Whimsy Wishes</strong> — entirely on my own, spending 3–4 months crafting every feature from scratch.</p>
+    <h2 class="about-heading">Turning ideas into<br>working systems</h2>
+    <p class="about-text">I'm a <strong>Product Developer</strong> from Dehradun, Uttarakhand, with over a year of hands-on web development experience. I started coding during my college years and built my first production e-commerce website — <strong>Whimsy Wishes</strong> — entirely on my own, spending 3–4 months crafting every feature from scratch.</p>
     <p class="about-text">That first project taught me more than any classroom — from payment gateway integrations to email systems, admin panels, and real user sessions. I've been building ever since.</p>
-    <p class="about-text">Currently focused on <strong>freelance work</strong>, helping local businesses and startups get online with websites that actually work for them.</p>
+    <p class="about-text">Currently seeking full-time <strong>Product Developer, AI Engineer, or System Designer</strong> roles (remote or on-site).</p>
   </div>
   <div class="about-right fade-up">
     <div class="stat-card">
@@ -764,8 +780,8 @@
     <div class="stat-card">
       <div class="stat-icon">🌐</div>
       <div>
-        <div class="stat-num">5</div>
-        <div class="stat-label">Projects built — including a production e-commerce site</div>
+        <div class="stat-num">6</div>
+        <div class="stat-label">Projects built — including AI systems and a production e-commerce site</div>
       </div>
     </div>
     <div class="stat-card">
@@ -796,23 +812,25 @@
       <div class="skill-group">
         <p class="skill-group-label">Core</p>
         <div class="skills-grid">
-          <span class="skill-pill core"><span class="skill-dot"></span>Figma</span>
-          <span class="skill-pill core"><span class="skill-dot"></span>UI/UX Design</span>
-          <span class="skill-pill core"><span class="skill-dot"></span>Manual Testing</span>
-          <span class="skill-pill core"><span class="skill-dot"></span>MySQL</span>
-          <span class="skill-pill core"><span class="skill-dot"></span>Jira</span>
+          <span class="skill-pill core"><span class="skill-dot"></span>System Architecture</span>
+          <span class="skill-pill core"><span class="skill-dot"></span>AI Integration / RAG</span>
+          <span class="skill-pill core"><span class="skill-dot"></span>Database Design</span>
+          <span class="skill-pill core"><span class="skill-dot"></span>REST APIs</span>
+          <span class="skill-pill core"><span class="skill-dot"></span>UI/UX Prototyping</span>
         </div>
       </div>
       <div class="skill-group">
         <p class="skill-group-label">Also Working With</p>
         <div class="skills-grid">
+          <span class="skill-pill"><span class="skill-dot"></span>Manual Testing</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Jira</span>
+          <span class="skill-pill"><span class="skill-dot"></span>Figma</span>
+          <span class="skill-pill"><span class="skill-dot"></span>MySQL</span>
           <span class="skill-pill"><span class="skill-dot"></span>Razorpay Integration</span>
           <span class="skill-pill"><span class="skill-dot"></span>Email / SMTP Systems</span>
           <span class="skill-pill"><span class="skill-dot"></span>Admin Panel Development</span>
           <span class="skill-pill"><span class="skill-dot"></span>Role-based Auth</span>
           <span class="skill-pill"><span class="skill-dot"></span>Responsive Design</span>
-          <span class="skill-pill"><span class="skill-dot"></span>Database Design</span>
-          <span class="skill-pill"><span class="skill-dot"></span>REST APIs</span>
           <span class="skill-pill"><span class="skill-dot"></span>Session Management</span>
           <span class="skill-pill"><span class="skill-dot"></span>Vercel</span>
           <span class="skill-pill"><span class="skill-dot"></span>Git</span>
@@ -839,11 +857,84 @@
   </div>
   <div class="projects-grid">
 
-    <!-- Whimsy Wishes -->
+    <!-- 01 Blaze AI -->
     <div class="project-card featured fade-up">
       <div class="project-left">
-        <div class="project-badge badge-expired">Domain expires as of 12 Nov 2026</div>
-        <div class="project-num">01 — E-Commerce</div>
+        <div class="project-badge badge-progress">Architecture &amp; Design</div>
+        <div class="project-num">01 — AI Systems</div>
+        <h3 class="project-title">Blaze AI</h3>
+        <p class="project-desc">An autonomous multi-agent work-execution system. A central Supervisor decomposes objectives, manages a live task dependency graph, and delegates research and verification to specialized agents. Designed with human-in-the-loop approval guardrails, selective memory retrieval, and checkpoint-based fault recovery.</p>
+        <div class="project-tags">
+          <span class="project-tag">Multi-Agent Systems</span>
+          <span class="project-tag">System Architecture</span>
+          <span class="project-tag">DAG Scheduling</span>
+          <span class="project-tag">Security Guardrails</span>
+          <span class="project-tag">LLM</span>
+        </div>
+      </div>
+      <div class="project-actions">
+        <button type="button" class="project-link" onclick="openArch('arch-blaze-ai')">System Architecture</button>
+        <a href="assets/blaze-ai-blueprint.pdf" target="_blank" class="project-link ghost">View Blueprint PDF</a>
+      </div>
+    </div>
+
+    <!-- 02 Interview Companion -->
+    <div class="project-card fade-up">
+      <div class="project-left">
+        <div class="project-badge badge-progress">In Development</div>
+        <div class="project-num">02 — AI Prototype</div>
+        <h3 class="project-title">Interview Companion</h3>
+        <p class="project-desc">A low-latency desktop assistant that parses local PDF knowledge bases and surfaces context-aware answers in real time through a lightweight overlay.</p>
+        <div class="project-tags">
+          <span class="project-tag">RAG Pipeline</span>
+          <span class="project-tag">PDF Parsing</span>
+          <span class="project-tag">Desktop Overlay</span>
+          <span class="project-tag">AI Prototyping</span>
+        </div>
+      </div>
+      <div class="project-actions">
+        <a href="YOUR_LOOM_OR_YOUTUBE_LINK" target="_blank" class="project-link">Watch 60s Demo</a>
+      </div>
+    </div>
+
+    <!-- 03 BlazePlus -->
+    <div class="project-card featured fade-up">
+      <div class="project-left">
+        <div class="project-badge badge-live">Live</div>
+        <div class="project-num">03 — Internal Platform</div>
+        <h3 class="project-title">BlazePlus</h3>
+        <p class="project-desc">A full-stack internal employee directory and communication platform, built from the ground up in raw PHP and MySQL. Features a multi-stage admin-gated signup pipeline, role-tiered visibility rules, department transfer requests, a contact-request system for cross-role privacy, and live-updating department chat rooms with moderation — all built solo, documented daily on LinkedIn during development.</p>
+        <div class="project-tags">
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">Vanilla JS</span>
+          <span class="project-tag">AJAX</span>
+          <span class="project-tag">Role-based Auth</span>
+          <span class="project-tag">Admin Dashboard</span>
+          <span class="project-tag">Live Chat</span>
+        </div>
+        <div class="project-highlights">
+          <div class="highlight-item"><strong>Auth Pipeline</strong>Signup → verify → admin review</div>
+          <div class="highlight-item"><strong>Live Chat</strong>AJAX polling, image/PDF uploads</div>
+          <div class="highlight-item"><strong>Admin Panel</strong>3 review queues + moderation</div>
+          <div class="highlight-item"><strong>Privacy System</strong>Contact requests + visibility tiers</div>
+        </div>
+      </div>
+      <div class="project-actions">
+        <a href="https://blaze-plus.vercel.app/" target="_blank" class="project-link">
+          Visit Site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <button type="button" class="project-link ghost" onclick="openArch('arch-blazeplus')">System Architecture</button>
+        <a href="details/blazeplus.html" class="project-link ghost">View Case Study</a>
+      </div>
+    </div>
+
+    <!-- 04 Whimsy Wishes -->
+    <div class="project-card fade-up">
+      <div class="project-left">
+        <div class="project-badge badge-completed">Case Study</div>
+        <div class="project-num">04 — E-Commerce</div>
         <h3 class="project-title">Whimsy Wishes</h3>
         <p class="project-desc">A full-featured e-commerce platform for handmade items. Built entirely solo over 3–4 months, this was my first production website — and one of the most ambitious learning experiences I've had. Every feature was researched, designed, and implemented from scratch.</p>
         <div class="project-tags">
@@ -859,23 +950,19 @@
           <div class="highlight-item"><strong>Razorpay</strong>Payment gateway</div>
           <div class="highlight-item"><strong>Mailing System</strong>Order notifications</div>
           <div class="highlight-item"><strong>Admin Panel</strong>Full inventory control</div>
-          <div class="highlight-item"><strong class="red">Domain Expired</strong>UI rebuild in progress</div>
+          <div class="highlight-item"><strong>Offline</strong>Domain lapsed, case study available</div>
         </div>
       </div>
       <div class="project-actions">
-        <a href="#" onclick="openNotice(event)" class="project-link">
-          Visit Site
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-        <a href="details/whimsy-wishes.html" class="project-link ghost">View Case Study</a>
+        <a href="details/whimsy-wishes.html" class="project-link">View Case Study</a>
       </div>
     </div>
 
-    <!-- Darken Shadows -->
+    <!-- 05 Darken Shadows -->
     <div class="project-card fade-up">
       <div class="project-left">
         <div class="project-badge badge-live">Live</div>
-        <div class="project-num">02 — Service Platform</div>
+        <div class="project-num">05 — Service Platform</div>
         <h3 class="project-title">Darken Shadows</h3>
         <p class="project-desc">A swimming class booking and management platform. Users can browse and enrol into programs, while admins manage coaches, members, and bookings. Features a multi-role system with separate access for admins, coaches, and members — each with their own dashboard.</p>
         <div class="project-tags">
@@ -901,11 +988,11 @@
       </div>
     </div>
 
-    <!-- S Collections -->
+    <!-- 06 S Collections -->
     <div class="project-card fade-up">
       <div class="project-left">
         <div class="project-badge badge-live">Live · Collaboration</div>
-        <div class="project-num">03 — E-Commerce</div>
+        <div class="project-num">06 — E-Commerce</div>
         <h3 class="project-title">S Collections</h3>
         <p class="project-desc">A completed e-commerce website built for a local women's clothing shop. This was a collaborative project — I handled the logic, database architecture, and backend connectivity, while my partner managed the content, product imagery, and page design.</p>
         <div class="project-tags">
@@ -930,38 +1017,6 @@
       </div>
     </div>
 
-    <!-- BlazePlus -->
-    <div class="project-card featured fade-up">
-      <div class="project-left">
-        <div class="project-badge badge-live">Live</div>
-        <div class="project-num">04 — Internal Platform</div>
-        <h3 class="project-title">BlazePlus</h3>
-        <p class="project-desc">A full-stack internal employee directory and communication platform, built from the ground up in raw PHP and MySQL. Features a multi-stage admin-gated signup pipeline, role-tiered visibility rules, department transfer requests, a contact-request system for cross-role privacy, and live-updating department chat rooms with moderation — all built solo, documented daily on LinkedIn during development.</p>
-        <div class="project-tags">
-          <span class="project-tag">PHP</span>
-          <span class="project-tag">MySQL</span>
-          <span class="project-tag">Vanilla JS</span>
-          <span class="project-tag">AJAX</span>
-          <span class="project-tag">Role-based Auth</span>
-          <span class="project-tag">Admin Dashboard</span>
-          <span class="project-tag">Live Chat</span>
-        </div>
-        <div class="project-highlights">
-          <div class="highlight-item"><strong>Auth Pipeline</strong>Signup → verify → admin review</div>
-          <div class="highlight-item"><strong>Live Chat</strong>AJAX polling, image/PDF uploads</div>
-          <div class="highlight-item"><strong>Admin Panel</strong>3 review queues + moderation</div>
-          <div class="highlight-item"><strong>Privacy System</strong>Contact requests + visibility tiers</div>
-        </div>
-      </div>
-      <div class="project-actions">
-        <a href="https://blaze-plus.vercel.app/" target="_blank" class="project-link">
-          Visit Site
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-        <a href="details/blazeplus.html" class="project-link ghost">View Case Study</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -972,8 +1027,6 @@
     <h2 class="about-heading">Redesign work</h2>
   </div>
   <div class="projects-grid">
-
-    <!-- ScanDrive -->
     <div class="project-card fade-up">
       <div class="project-left">
         <div class="project-badge badge-assignment">Assignment</div>
@@ -998,7 +1051,6 @@
         </a>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1008,17 +1060,13 @@
   <div class="contact-inner fade-up">
     <p class="about-label" style="margin-bottom: 1rem;">// Get In Touch</p>
     <h2 class="contact-heading">Let's build<br>something <span>great.</span></h2>
-    <p class="contact-sub">Have a project in mind? Whether it's a full website, an e-commerce store, or a custom web app — I'd love to hear about it. Let's talk.</p>
+    <p class="contact-sub">Hiring for a product, AI, or system design role? I'd love to hear about it. Let's talk.</p>
     <div class="contact-links">
       <a href="https://mail.google.com/mail/?view=cm&to=amanbhattx3@gmail.com" target="_blank" class="contact-link primary">
         ✉ Send Me an Email
       </a>
-      <a href="https://www.linkedin.com/in/aman-bhatt-81191335a/" target="_blank" class="contact-link secondary">
-        LinkedIn
-      </a>
-      <a href="https://github.com/AmanBhattx3" target="_blank" class="contact-link secondary">
-        GitHub
-      </a>
+      <a href="https://www.linkedin.com/in/aman-bhatt-81191335a/" target="_blank" class="contact-link secondary">LinkedIn</a>
+      <a href="https://github.com/AmanBhattx3" target="_blank" class="contact-link secondary">GitHub</a>
     </div>
   </div>
 </section>
@@ -1055,15 +1103,15 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Whimsy Wishes "coming back soon" notice
-  function openNotice(e) {
-    e.preventDefault();
-    document.getElementById('notice').classList.add('open');
+  // System architecture modal
+  const archOverlay = document.getElementById('arch');
+  function openArch(id) {
+    document.querySelectorAll('.arch-view').forEach(v => v.classList.remove('show'));
+    document.getElementById(id).classList.add('show');
+    archOverlay.classList.add('open');
   }
-  function closeNotice() {
-    document.getElementById('notice').classList.remove('open');
-  }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNotice(); });
+  function closeArch() { archOverlay.classList.remove('open'); }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArch(); });
 </script>
 </body>
 </html>
