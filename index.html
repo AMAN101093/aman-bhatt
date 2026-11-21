@@ -508,6 +508,13 @@
   .arch-box svg .band { fill: none; stroke: var(--text-dim); stroke-dasharray: 5 4; }
   .arch-box svg .edge { stroke: var(--amber-dim); stroke-width: 1.5; fill: none; }
   .arch-box svg .arrowhead { fill: var(--amber-dim); }
+  .bp-lane { font-family: 'Syne', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); margin: 1.75rem 0 0.75rem; }
+  .bp-item { background: var(--bg2); border: 1px solid var(--border); border-radius: 0.9rem; padding: 1.1rem 1.25rem; margin-bottom: 0.75rem; }
+  .bp-item h5 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+  .bp-item ul { padding-left: 1.1rem; color: var(--text-muted); font-size: 0.9rem; font-weight: 300; line-height: 1.65; }
+  .bp-principle { border: 1px solid var(--border-amber); background: var(--amber-glow2); border-radius: 0.9rem; padding: 1.25rem; margin-top: 1.75rem; }
+  .bp-principle h5 { font-family: 'Syne', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.5rem; }
+  .bp-principle p { color: var(--text); font-size: 0.95rem; font-weight: 300; line-height: 1.7; }
   .arch-close {
     margin-top: 1.5rem;
     background: var(--amber);
@@ -659,6 +666,83 @@
         <rect class="node" x="380" y="298" width="300" height="42" rx="8"/>
         <text x="530" y="324" text-anchor="middle">Checkpoint-based fault recovery</text>
       </svg>
+      <button type="button" class="arch-close" onclick="closeArch()">Close</button>
+    </div>
+
+    <!-- Blaze AI Blueprint -->
+    <div class="arch-view" id="arch-blueprint">
+      <h4>Blaze AI — System Architecture</h4>
+      <p>An autonomous work-execution system that transforms user objectives into structured tasks, coordinates specialized agents, verifies results, and delivers completed outputs with human oversight.</p>
+
+      <div class="bp-lane">Input &amp; Planning</div>
+      <div class="bp-item">
+        <h5>1. User Objective</h5>
+        <ul><li>Receives goals, constraints and expected outcomes.</li></ul>
+      </div>
+      <div class="bp-item">
+        <h5>2. Supervisor (S)</h5>
+        <ul>
+          <li>Interprets objectives and retrieves relevant memory.</li>
+          <li>Breaks objectives into executable tasks.</li>
+          <li>Assigns agents and manages priorities.</li>
+        </ul>
+      </div>
+      <div class="bp-item">
+        <h5>3. Task Dependency Graph</h5>
+        <ul>
+          <li>Tracks task dependencies and execution status.</li>
+          <li>Enables parallel execution where possible.</li>
+          <li>Recalculates schedules when tasks change.</li>
+        </ul>
+      </div>
+
+      <div class="bp-lane">Execution &amp; Control</div>
+      <div class="bp-item">
+        <h5>4. Specialized Agents (A &amp; B)</h5>
+        <ul>
+          <li>Agent A: Primary research, analysis and execution.</li>
+          <li>Agent B: Independent verification, investigation and delegated tasks.</li>
+        </ul>
+      </div>
+      <div class="bp-item">
+        <h5>5. Human Approval &amp; Decision Center</h5>
+        <ul>
+          <li>Handles questions, missing information and restricted actions.</li>
+          <li>Requests explicit permission for sensitive operations.</li>
+          <li>Allows independent tasks to continue when safe.</li>
+        </ul>
+      </div>
+      <div class="bp-item">
+        <h5>6. Verified Final Output</h5>
+        <ul>
+          <li>Supervisor reviews completed work.</li>
+          <li>Preserves evidence, sources and unresolved issues.</li>
+          <li>Delivers the final result to the owner.</li>
+        </ul>
+      </div>
+
+      <div class="bp-lane">Supporting Layer</div>
+      <div class="bp-item">
+        <h5>Universal &amp; Category Memory</h5>
+        <ul>
+          <li>Stores global rules, user preferences and specialist procedures.</li>
+          <li>Uses selective retrieval to provide relevant context to agents.</li>
+          <li>Cross-category lessons require owner approval.</li>
+        </ul>
+      </div>
+      <div class="bp-item">
+        <h5>Security &amp; Recovery</h5>
+        <ul>
+          <li>Backend-enforced permissions and protected credentials.</li>
+          <li>Checkpoint-based recovery and failure investigation.</li>
+          <li>Audit logs and emergency execution controls.</li>
+        </ul>
+      </div>
+
+      <div class="bp-principle">
+        <h5>Core Design Principle</h5>
+        <p>Blaze keeps work moving autonomously where safe, involves the owner when decisions or permissions are required, and never compromises security or accuracy to appear successful.</p>
+      </div>
       <button type="button" class="arch-close" onclick="closeArch()">Close</button>
     </div>
 
@@ -874,7 +958,7 @@
       </div>
       <div class="project-actions">
         <button type="button" class="project-link" onclick="openArch('arch-blaze-ai')">System Architecture</button>
-        <a href="assets/blaze-ai-blueprint.pdf" target="_blank" class="project-link ghost">View Blueprint PDF</a>
+        <button type="button" class="project-link ghost" onclick="openArch('arch-blueprint')">View Blueprint</button>
       </div>
     </div>
 
